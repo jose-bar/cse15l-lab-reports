@@ -1,6 +1,6 @@
 # **Lab Report 1**
 
-## **CD:** "Change Directory"
+## **cd:** "Change Directory"
 1. Using the command with no arguments:
 ```
 [user@sahara ~]$ cd
@@ -70,3 +70,41 @@ README
 
 > The output is not an error. (Although I do not know the practicality of it)
    
+## **cat:** "Concatenate"
+1. Using the command with no arguments:
+```
+[user@sahara ~/lecture1]$ cat
+
+```
+> Working directory: home/lecture1 
+
+> Entering cat with no arguments will put the terminal in a state where all text inputs will be spat out as outputs. To exit this state enter [CTRL] + [C]
+
+> The output is not an error
+
+2. Using the command with a path to a directory as an argument:
+```
+[user@sahara ~/lecture1]$ cat messages
+cat: messages: Is a directory
+```
+> Working directory: /home/lecture1
+
+> Since cat is used to read the outputs of files, it cannot read an argument that is a directory. It lets the user know that the argument was a directory.
+
+> The output is an error as cat takes in file paths not directories for its argument.
+
+3. Using the command with a path to a file as an argument:
+```
+[user@sahara ~/lecture1/messages]$ cat af.txt
+Hello Wêreld!
+```
+```
+[user@sahara ~/lecture1/messages]$ cat af.txt en-us.txt
+Hello Wêreld!
+Hello World!
+```
+> Working directory: /home/lecture1/messages
+
+> The command displays the text "Hello World!" in African. This is the content of the af.txt file and thus the output of cat. Adding another file name prints out the contexts subsequently
+
+> The output is not an error.
