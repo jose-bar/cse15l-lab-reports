@@ -1,7 +1,7 @@
 # **Lab Report 1**
 
-## **cd:** "Change Directory"
-1. Using the command with no arguments:
+## 1. **cd:** "Change Directory"
+a) Using the command with no arguments:
 ```
 [user@sahara ~]$ cd
 [user@sahara ~]$
@@ -13,7 +13,7 @@
 
 > The output is not an error
 
-2. Using the command with a path to a directory as an argument:
+b) Using the command with a path to a directory as an argument:
 ```
 [user@sahara ~]$ cd lecture1
 [user@sahara ~/lecture1]$
@@ -25,7 +25,7 @@
 
 > The output is not an error
 
-3. Using the command with a path to a file as an argument:
+c) Using the command with a path to a file as an argument:
 ```
 [user@sahara ~/lecture1]$ cd README
 bash: cd: README: Not a directory
@@ -39,8 +39,8 @@ bash: cd: README: Not a directory
 
 
 
-## **ls:** "List"
-1. Using the command with no arguments:
+## 2. **ls:** "List"
+a) Using the command with no arguments:
 ```
 [user@sahara ~/lecture1]$ ls
 Hello.class  Hello.java  **messages**  README
@@ -52,7 +52,7 @@ Hello.class  Hello.java  **messages**  README
 
 > The output is not an error
 
-2. Using the command with a path to a directory as an argument:
+b) Using the command with a path to a directory as an argument:
 ```
 [user@sahara ~/lecture1]$ ls messages
 af.txt  en-us.txt  es-mx.txt  zh-cn.txt
@@ -64,7 +64,7 @@ af.txt  en-us.txt  es-mx.txt  zh-cn.txt
 
 > The output is not an error
 
-3. Using the command with a path to a file as an argument:
+c) Using the command with a path to a file as an argument:
 ```
 [user@sahara ~/lecture1]$ ls README
 README
@@ -76,11 +76,10 @@ README
 
 > The output is not an error. (Although I do not know the practicality of it)
    
-## **cat:** "Concatenate"
-1. Using the command with no arguments:
+## 3. **cat:** "Concatenate"
+a) Using the command with no arguments:
 ```
 [user@sahara ~/lecture1]$ cat
-
 ```
 
 > Working directory: home/lecture1 
@@ -89,7 +88,7 @@ README
 
 > The output is not an error
 
-2. Using the command with a path to a directory as an argument:
+b) Using the command with a path to a directory as an argument:
 ```
 [user@sahara ~/lecture1]$ cat messages
 cat: messages: Is a directory
@@ -101,7 +100,7 @@ cat: messages: Is a directory
 
 > The output is an error as cat takes in file paths not directories for its argument.
 
-3. Using the command with a path to a file as an argument:
+c) Using the command with a path to a file as an argument:
 ```
 [user@sahara ~/lecture1/messages]$ cat af.txt
 Hello Wêreld!
