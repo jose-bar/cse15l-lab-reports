@@ -105,7 +105,6 @@ c) Using the command with a path to a file as an argument:
 [user@sahara ~/lecture1/messages]$ cat af.txt
 Hello Wêreld!
 ```
-.
 ```
 [user@sahara ~/lecture1/messages]$ cat af.txt en-us.txt
 Hello Wêreld!
