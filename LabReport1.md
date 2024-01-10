@@ -106,7 +106,7 @@ cat: messages: Is a directory
 [user@sahara ~/lecture1/messages]$ cat af.txt
 Hello Wêreld!
 ```
-
+.
 ```
 [user@sahara ~/lecture1/messages]$ cat af.txt en-us.txt
 Hello Wêreld!
