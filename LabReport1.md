@@ -60,7 +60,7 @@ af.txt  en-us.txt  es-mx.txt  zh-cn.txt
 
 > Working directory: `/home/lecture1`
 
-> The output reads the list of files from the directory path that we passed as an argument. It states that the directory **messages** has those files within it.
+> The output reads the list of files from the directory path that we passed as an argument. It states that the directory `messages` has those files within it.
 
 > The output is not an error
 
@@ -84,7 +84,7 @@ a) Using the command with no arguments:
 
 > Working directory: `home/lecture1`
 
-> Entering cat with no arguments will put the terminal in a state where all text inputs will be spat out as outputs. To exit this state enter `[CTRL] + [C]`
+> Entering `cat` with no arguments will put the terminal in a state where all text inputs will be spat out as outputs. To exit this state enter `[CTRL] + [C]`
 
 > The output is not an error
 
@@ -96,9 +96,9 @@ cat: messages: Is a directory
 
 > Working directory: `/home/lecture1`
 
-> Since cat is used to read the outputs of files, it cannot read an argument that is a directory. It lets the user know that the argument was a directory.
+> Since `cat` is used to read the outputs of files, it cannot read an argument that is a directory. It lets the user know that the argument was a directory.
 
-> The output is an error as cat takes in file paths not directories for its argument.
+> The output is an error as `cat` takes in file paths not directories for its argument.
 
 c) Using the command with a path to a file as an argument:
 ```
@@ -113,6 +113,6 @@ Hello World!
 
 > Working directory: `/home/lecture1/messages`
 
-> The command displays the text "Hello World!" in African. This is the content of the af.txt file and thus the output of cat. Adding another file name prints out the contexts subsequently
+> The command displays the text "Hello World!" in African. This is the content of the `af.txt` file and thus the output of `cat`. Adding another file name prints out the contexts subsequently
 
 > The output is not an error.
