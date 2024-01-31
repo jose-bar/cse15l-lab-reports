@@ -56,6 +56,18 @@ class Handler implements URLHandler {
 }
 ```
 ### First instance of **/add-message**
+URL[^1].
+![Image](FirstInstance.png)
 
+- Methods Called:
+
+>`main`: The class `chatServer` has no fields that affect this method but it takes in the command line as arguments. It takes in a number to be used as a port number with the following method.
+>
+>`handleRequest`: This method has three String fields within the class `Handler`; `history`-Stores the chat history, `s`-Temporarily stores the intended message, `u`-Temporarily stores the user sending the message. The method takes in a URL and does something different depending on the path
 
 ### Second instance of **/add-message**
+>URL: `https://0-0-0-0-4000-no9itgkuo7tmkseqnml4o8866k.us.edusercontent.com/add-message?s=She fell off the first step!&user=Answer`
+![Image](SecondInstance.png)
+
+
+[^1] `https://0-0-0-0-4000-no9itgkuo7tmkseqnml4o8866k.us.edusercontent.com/add-message?s=A girl fell off a 20-foot ladder. She wasn’t hurt. How?&user=Riddle`
