@@ -85,6 +85,9 @@ URL[^2].
   2. `String u` now stores "Answer"
   3. `String history` now stores the combination of `u + ": " + s`
 
+[^1]: https://0-0-0-0-4000-no9itgkuo7tmkseqnml4o8866k.us.edusercontent.com/add-message?s=A girl fell off a 20-foot ladder. She wasn’t hurt. How?&user=Riddle
+
+[^2]: https://0-0-0-0-4000-no9itgkuo7tmkseqnml4o8866k.us.edusercontent.com/add-message?s=She fell off the first step!&user=Answer
 
 
 ## 2. Key Login
@@ -110,10 +113,3 @@ Whilst I am sure that a good amount of the work is done internally with the UCSD
 The tutorial videa helped me set up Junit and utilize it from my terminal for my CSE 12 PA to run some autograders that check on style and indentations. It saved me a lot of time from figuring out what commands to run and how to sort the files.
 
 
-
-
-
-
-[^1]: https://0-0-0-0-4000-no9itgkuo7tmkseqnml4o8866k.us.edusercontent.com/add-message?s=A girl fell off a 20-foot ladder. She wasn’t hurt. How?&user=Riddle
-
-[^2]: https://0-0-0-0-4000-no9itgkuo7tmkseqnml4o8866k.us.edusercontent.com/add-message?s=She fell off the first step!&user=Answer
