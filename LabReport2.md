@@ -63,7 +63,7 @@ URL[^1].
 
 >`main`: The class `chatServer` has no fields that affect this method but it takes in the command line as arguments. It takes in a number to be used as a port number with the following method.
 >
->`handleRequest`: This method has three String fields within the class `Handler`; `history`-Stores the chat history, `s`-Temporarily stores the intended message, `u`-Temporarily stores the user sending the message. The method takes in a URL and does something different depending on the path.
+>`handleRequest`: This method utilizes the three String fields within the class `Handler`; `history`-Stores the chat history, `s`-Temporarily stores the intended message, `u`-Temporarily stores the user sending the message. The method takes in a URL and does something different depending on the path.
 
 - With this specific request, the following changes happen to the fields:
   1. `String s` now stores "A girl fell off a 20-foot ladder. She wasn’t hurt. How?"
@@ -76,14 +76,14 @@ URL[^2].
 
 - Methods Called:
 
->`main`: Refer to the previous image
+>`main`: The server is already started so it does not need to call it
 >
->`handleRequest`: refer to the previous image
+>`handleRequest`: This method utilizes the three String fields within the class `Handler`; `history`-Stores the chat history, `s`-Temporarily stores the intended message, `u`-Temporarily stores the user sending the message. The method takes in a URL and does something different depending on the path.
 
 - With this specific request, the following changes happen to the fields:
   1. `String s` now stores "She fell off the first step!"
   2. `String u` now stores "Answer"
-  3. `String history` now stores the combination of `u + ": " + s`
+  3. `String history` now stores the combination of `u + ": " + s` and the previous requests
 
 [^1]: https://0-0-0-0-4000-no9itgkuo7tmkseqnml4o8866k.us.edusercontent.com/add-message?s=A girl fell off a 20-foot ladder. She wasn’t hurt. How?&user=Riddle
 
@@ -94,9 +94,11 @@ URL[^2].
 
 ### Absolute path to private key
 ![Image](PrivateKey.png)
+Path: `/c/Users/hpajo/.shh/id_rsa`
 
 ### Absolute path to public key
 ![Image](PublicKey.png)
+Path: `/home/linux/ieng6/oce/4f/jbarcelogarcia/.ssh/authorized_keys`
 
 ### Terminal login
 ![Image](Passwordless.png)
