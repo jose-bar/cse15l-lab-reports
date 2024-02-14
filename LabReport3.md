@@ -95,4 +95,112 @@ static double averageWithoutLowest(double[] arr) {
 ```
 ## Researching Commands: find
 
-### 
+### -iname
+> Calling `-iname` after `$find` will search for files by an aproximate name
+#### Example 1
+```
+hpajo@HP-Envy MINGW64 ~/OneDrive/Documents/Desktop/CSE/15L/Lab5/docsearch (main)
+$ find -iname "*plos*.txt"
+./plos+-sizes.txt
+./plos-bp-lines.txt
+./plos-bp.txt
+./plos-sizes.txt
+```
+> If your files all follow a certain naming convention (such as using "plos" for file output", it can be convinient to separate them by searching the keyword desired contained in all of them
+
+#### Example 2
+```
+hpajo@HP-Envy MINGW64 ~/OneDrive/Documents/Desktop/CSE/15L/Lab5/docsearch/technical (main)
+$ find -iname "*bi*.txt"
+./government/Env_Prot_Agen/bill.txt
+./government/Media/Bias_on_the_Job.txt
+./government/Media/The_Columbian.txt
+./plos/journal.pbio.0020001.txt
+./plos/journal.pbio.0020010.txt
+./plos/journal.pbio.0020012.txt
+./plos/journal.pbio.0020013.txt
+./plos/journal.pbio.0020019.txt
+./plos/journal.pbio.0020028.txt
+./plos/journal.pbio.0020035.txt
+./plos/journal.pbio.0020040.txt
+./plos/journal.pbio.0020042.txt
+./plos/journal.pbio.0020043.txt
+./plos/journal.pbio.0020046.txt
+...
+```
+> This is an example of a worse application as the search term was way too broad to properly locate anything
+
+### -type
+> Used to search for all files of a certain type, each type has its matching letter for its reference
+
+### Example 1
+```
+hpajo@HP-Envy MINGW64 ~/OneDrive/Documents/Desktop/CSE/15L/Lab5/docsearch/technical (main)
+$ find  -type d
+.
+./911report
+./biomed
+./government
+./government/About_LSC
+./government/Alcohol_Problems
+./government/Env_Prot_Agen
+./government/Gen_Account_Office
+./government/Media
+./government/Post_Rate_Comm
+./plos
+```
+> Using `-type d` will search for all the directories
+
+### Exmaple 2
+```
+hpajo@HP-Envy MINGW64 ~/OneDrive/Documents/Desktop/CSE/15L/Lab5/docsearch/technical (main)
+$ find  -type f
+./911report/chapter-1.txt
+./911report/chapter-10.txt
+./911report/chapter-11.txt
+./911report/chapter-12.txt
+./911report/chapter-13.1.txt
+./911report/chapter-13.2.txt
+./911report/chapter-13.3.txt
+./911report/chapter-13.4.txt
+./911report/chapter-13.5.txt
+./911report/chapter-2.txt
+./911report/chapter-3.txt
+...
+```
+> Using `-type f` will return all the regular files
+
+## -maxdepth
+> Limits the depth of searches within the directory
+
+### Exmaple 1
+```
+hpajo@HP-Envy MINGW64 ~/OneDrive/Documents/Desktop/CSE/15L/Lab5/docsearch/technical (main)
+$ find -maxdepth 1 -type d
+.
+./911report
+./biomed
+./government
+./plos
+```
+> A depth of 1 means it will only produce the directories directly under our current one
+
+### Example 2
+```
+hpajo@HP-Envy MINGW64 ~/OneDrive/Documents/Desktop/CSE/15L/Lab5/docsearch/technical (main)
+$ find -maxdepth 2 -type d
+.
+./911report
+./biomed
+./government
+./government/About_LSC
+./government/Alcohol_Problems
+./government/Env_Prot_Agen
+./government/Gen_Account_Office
+./government/Media
+./government/Post_Rate_Comm
+./plos
+```
+> Coincidentally, a depth of 2 results in looking into our directories' directory for more files of type d
+
+Reference: https://www.redhat.com/sysadmin/linux-find-command
