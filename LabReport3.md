@@ -42,7 +42,7 @@ public void testAverageWithoutLowest(){
 Expect: 2.5, Output: 2.5
 
 #### **Symptom**
-![Image](JUnit.png)
+![Image](JUnit1.png)
 > The test with input {1, 2, 3} passes and is the first "." in the terminal output
 > 
 > The test with input {5, 5, 5} is the failure, resulting in the "E" and the rest of the terminal output
