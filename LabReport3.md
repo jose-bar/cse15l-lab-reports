@@ -1,105 +1,71 @@
 
 # **Lab Report 2**
 
-## 1. Web Server **ChatServer**
+## 1. Bugs
 
-### ChatServer.java code
+### averageWithoutLowest(doube[] arr)
 ```
-import java.io.IOException;
-import java.net.URI;
-
-class ChatServer {
-    public static void main(String[] args) throws IOException {
-        if(args.length == 0){
-            System.out.println("Missing port number! Try any number between 1024 to 49151");
-            return;
-        }
-
-        int port = Integer.parseInt(args[0]);
-
-        Server.start(port, new Handler());
+static double averageWithoutLowest(double[] arr) {
+    if(arr.length < 2) { return 0.0; }
+    double lowest = arr[0];
+    for(double num: arr) {
+      if(num < lowest) { lowest = num; }
     }
-}
-
-class Handler implements URLHandler {
-    // The one bit of state on the server: a number that will be manipulated by
-    // various requests.
-    String history = "";
-    String s = "";
-    String u = "";
-
-    public String handleRequest(URI url) {
-        if (url.getPath().equals("/")) {
-            if(history.equals("")) return "Chat history is empty!";
-            else return history;
-        } else if (url.getPath().equals("/add-message")) {
-            String[] parameters = url.getQuery().split("&");
-            String[] message = parameters[0].split("=");
-            String[] user = parameters[1].split("=");
-            if (message[0].equals("s")) {
-                s = message[1];
-                s.replace("+", " ");
-            }
-            if (user[0].equals("user")) {
-                u = user[1];
-                u.replace("+", " ");
-            }
-            history += u + ": " + s + "\n";
-            return history;
-        }else if(url.getPath().equals("/clear")){
-            history = "";
-            return "Chat history has been cleared!";
-        }else{
-            return "404 not found!";
-        }
+    double sum = 0;
+    for(double num: arr) {
+      if(num != lowest) { sum += num; }
     }
+    return sum / (arr.length - 1);
 }
 ```
-### First instance of **/add-message**
-URL[^1].
-![Image](FirstInstance.png)
-
-- Methods Called:
-
->`main`: The class `chatServer` has no fields that affect this method but it takes in the command line as arguments. It takes in a number to be used as a port number with the following method.
->
->`handleRequest`: This method has three String fields within the class `Handler`; `history`-Stores the chat history, `s`-Temporarily stores the intended message, `u`-Temporarily stores the user sending the message. The method takes in a URL and does something different depending on the path.
-
-- With this specific request, the following changes happen to the fields:
-  1. `String s` now stores "A girl fell off a 20-foot ladder. She wasn’t hurt. How?"
-  2. `String u` now stores "Riddle"
-  3. `String history` now stores the combination of `u + ": " + s`
-
-### Second instance of **/add-message**
-URL[^2].
-![Image](SecondInstance.png)
-
-- Methods Called:
-
->`main`: Refer to the previous image
->
->`handleRequest`: refer to the previous image
-
-- With this specific request, the following changes happen to the fields:
-  1. `String s` now stores "She fell off the first step!"
-  2. `String u` now stores "Answer"
-  3. `String history` now stores the combination of `u + ": " + s`
-
-[^1]: https://0-0-0-0-4000-no9itgkuo7tmkseqnml4o8866k.us.edusercontent.com/add-message?s=A girl fell off a 20-foot ladder. She wasn’t hurt. How?&user=Riddle
-
-[^2]: https://0-0-0-0-4000-no9itgkuo7tmkseqnml4o8866k.us.edusercontent.com/add-message?s=She fell off the first step!&user=Answer
+#### **Failure Inducing**
+Input: {5, 5, 5}
+```
+@Test
+public void testAverageWithoutLowest(){
+    double[] input2 = {5, 5, 5};
+    assertEquals("Testing same number", 5, ArrayExamples.averageWithoutLowest(input2), 0.001);
+}
+```
+Expect: 5, Output: 0
 
 
-## 2. Key Login
+#### **Non-Failure Inducing**
+Input: {1, 2, 3}
+```
+@Test
+public void testAverageWithoutLowest(){
+    double[] input1 = {1, 2, 3};
+    assertEquals(3, ArrayExamples.averageWithoutLowest(input1), 0.001);
+}
+```
+Expect: 2.5, Output: 2.5
 
-### Absolute path to private key
-![Image](PrivateKey.png)
+#### **Symptom**
+![Image](JUnit.png)
+> The test with input {1, 2, 3} passes and is the first "." in the terminal output
+> 
+> The test with input {5, 5, 5} is the failure, resulting in the "E" and the rest of the terminal output
 
-### Absolute path to public key
-![Image](PublicKey.png)
-
-### Terminal login
-![Image](Passwordless.png)
+#### Fixing the Bug
+```
+/**
+* Bug: Does not check for a null array input
+* Bug: Input being of all same number
+*/
+static double averageWithoutLowest(double[] arr) {
+    if(arr.length < 2) { return 0.0; }
+    double lowest = arr[0];
+    for(double num: arr) {
+      if(num < lowest) { lowest = num; }
+    }
+    double sum = 0;
+    for(double num: arr) {
+      if(num != lowest) { sum += num; }
+    }
+    return sum / (arr.length - 1);
+  }
+```
 
 
 ## 3. Stuff I learnt
