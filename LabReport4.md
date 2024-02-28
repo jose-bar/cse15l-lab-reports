@@ -43,3 +43,8 @@ I entered `<up>` twice to rerun the `bash test.sh` line which was two up from my
 
 ## Step 9: Commit and push the resulting change to your Github account
 
+> Keys Pressed: `g i t <space> p u s h  <space> o r i g i n  <space> m a i n <enter>`, `g i t <space> a d d <space> l i <tab> <enter>`, `g i t <space> c o m m i t <space> - m " <shift> g r a s s <space> t a s t e s <space> b a d " <enter>`, `<up> <up> <up> <enter>` 
+
+![Image](git.png)
+
+The first command ran was `git push` which uploads the repository I was working on the one linked with my github account and forked repository based on the specified path. The next command was `git add` which adds a change in your current directory to the staging area, I specify the edited java file by typing `li` then pressing `<tab>` which lets the terminal auto-fill it. Next up is `git commit` which snapshots your current stage, `-m` lets you add a message whcih I chose to be "Grass tastes bad" (very insightful). Finally, I run the `git push origin main` to upload all the changes from the local respository to the online one.
