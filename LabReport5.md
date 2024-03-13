@@ -260,9 +260,17 @@ else if (url.getPath().equals("/remove")) {
         s = parameters[1];
     }
     for(int i = 0; i < word.size(); i++){
-        if(word.get(i).contains(s)) word.remove(i);
-        i--;
+        if(word.get(i).contains(s)){
+          word.remove(i);
+          i--;
+        }
     }
     return s + " removed!";
 }
 ```
+
+Proof of fixed behavior:
+
+![Image](bananaFixed.png)
+
+
