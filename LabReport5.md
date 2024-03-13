@@ -61,14 +61,14 @@ Directory Structure:
 
 #### Contents of each Relevant File
 
-bananafy.sh:
+**bananafy.sh:**
 ```
 for i in {1..5}; do
     curl http://localhost:4001/add?s=banana &
 done
 ```
 
-SearchEngine.java:
+**SearchEngine.java:**
 ```
 import java.io.IOException;
 import java.net.URI;
@@ -140,7 +140,7 @@ class SearchEngine {
 }
 ```
 
-Server.java:
+**Server.java:**
 ```
 // A simple web server using Java's built-in HttpServer
 
@@ -197,7 +197,7 @@ public class Server {
 }
 ```
 
-startServer.sh:
+**startServer.sh:**
 ```
 javac *.java
 
